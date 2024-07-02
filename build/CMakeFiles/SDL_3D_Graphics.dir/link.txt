@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -rdynamic CMakeFiles/SDL_3D_Graphics.dir/main.cpp.o -o SDL_3D_Graphics  /usr/lib/libSDL2main.a /usr/lib/libSDL2-2.0.so.0.3000.3

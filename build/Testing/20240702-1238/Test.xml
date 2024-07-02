@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Linux-c++"
+	BuildStamp="20240702-1238-Experimental"
+	Name="dawkstorm-acer"
+	Generator="ctest-3.29.6"
+	CompilerName="/usr/bin/c++"
+	CompilerVersion="14.1.1"
+	OSName="Linux"
+	Hostname="dawkstorm-acer"
+	OSRelease="6.9.3-3-MANJARO"
+	OSVersion="#1 SMP PREEMPT_DYNAMIC Mon Jun 10 09:50:04 UTC 2024"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="140"
+	ProcessorCacheSize="8192"
+	NumberOfLogicalCPU="8"
+	NumberOfPhysicalCPU="4"
+	TotalVirtualMemory="0"
+	TotalPhysicalMemory="15772"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="1225.42"
+	>
+	<Testing>
+		<StartDateTime>Jul 02 16:51 EEST</StartDateTime>
+		<StartTestTime>1719928279</StartTestTime>
+		<TestList/>
+		<EndDateTime>Jul 02 16:51 EEST</EndDateTime>
+		<EndTestTime>1719928279</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>
