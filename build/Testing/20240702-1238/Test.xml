@@ -7,8 +7,8 @@
 	CompilerVersion="14.1.1"
 	OSName="Linux"
 	Hostname="dawkstorm-acer"
-	OSRelease="6.9.3-3-MANJARO"
-	OSVersion="#1 SMP PREEMPT_DYNAMIC Mon Jun 10 09:50:04 UTC 2024"
+	OSRelease="6.9.5-1-MANJARO"
+	OSVersion="#1 SMP PREEMPT_DYNAMIC Wed Jun 19 19:07:41 UTC 2024"
 	OSPlatform="x86_64"
 	Is64Bits="1"
 	VendorString="GenuineIntel"
@@ -21,14 +21,14 @@
 	TotalVirtualMemory="0"
 	TotalPhysicalMemory="15772"
 	LogicalProcessorsPerPhysical="2"
-	ProcessorClockFrequency="1225.42"
+	ProcessorClockFrequency="3732.73"
 	>
 	<Testing>
-		<StartDateTime>Jul 02 16:51 EEST</StartDateTime>
-		<StartTestTime>1719928279</StartTestTime>
+		<StartDateTime>Jul 02 20:47 EEST</StartDateTime>
+		<StartTestTime>1719942476</StartTestTime>
 		<TestList/>
-		<EndDateTime>Jul 02 16:51 EEST</EndDateTime>
-		<EndTestTime>1719928279</EndTestTime>
+		<EndDateTime>Jul 02 20:47 EEST</EndDateTime>
+		<EndTestTime>1719942476</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>
