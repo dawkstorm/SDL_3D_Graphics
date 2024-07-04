@@ -38,17 +38,17 @@ int main()
     const std::vector<SDL_Vertex> verts =
         {
             {
-                SDL_FPoint{0, 0},
+                coords.TranslateFromAbsoluteToPixels(Point2D(0, 0)),
                 SDL_Color{255, 0, 0, 255},
                 SDL_FPoint{0},
             },
             {
-                SDL_FPoint{0, SDL_GetWindowSurface(window)->h},
+                coords.TranslateFromAbsoluteToPixels(Point2D(0, 1)),
                 SDL_Color{0, 0, 255, 255},
                 SDL_FPoint{0},
             },
             {
-                SDL_FPoint{SDL_GetWindowSurface(window)->w, SDL_GetWindowSurface(window)->h},
+                coords.TranslateFromAbsoluteToPixels(Point2D(1, 1)),
                 SDL_Color{0, 255, 0, 255},
                 SDL_FPoint{0},
             },

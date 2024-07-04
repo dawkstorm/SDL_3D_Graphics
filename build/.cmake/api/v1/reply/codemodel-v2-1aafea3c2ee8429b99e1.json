@@ -9,7 +9,7 @@
 					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.0.0"
+						"string" : "3.5.0"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -291,7 +291,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "SDL_3D_Graphics::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-SDL_3D_Graphics-Debug-8caefd46b95a9b89933b.json",
+					"jsonFile" : "target-SDL_3D_Graphics-Debug-ad9eb834703ae2e2735c.json",
 					"name" : "SDL_3D_Graphics",
 					"projectIndex" : 0
 				}

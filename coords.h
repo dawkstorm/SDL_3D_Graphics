@@ -1,13 +1,19 @@
 #include <SDL2/SDL.h>
 #include <vector>
-struct Point2D;
+#include <iostream>
+class Point2D
+{
+public:
+    float x;
+    float y;
+    Point2D(float x, float y);
+};
 
 class coords
 {
 private:
     int windowWidth;
     int windowHeight;
-    float aspectRatio;
 
 public:
     coords(SDL_Window *window);
