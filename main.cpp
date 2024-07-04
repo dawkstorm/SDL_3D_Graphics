@@ -31,25 +31,25 @@ int main()
         return 1;
     }
 
-    window = SDL_CreateWindow("Meow", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
+    window = SDL_CreateWindow("Meow", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 960, 540, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     coords coords(window);
 
     const std::vector<SDL_Vertex> verts =
         {
             {
+                coords.TranslateFromAbsoluteToPixels(Point2D(-1, -1)),
+                SDL_Color{255, 0, 255, 255},
+                SDL_FPoint{0},
+            },
+            {
+                coords.TranslateFromAbsoluteToPixels(Point2D(-1, 0)),
+                SDL_Color{255, 255, 255, 255},
+                SDL_FPoint{0},
+            },
+            {
                 coords.TranslateFromAbsoluteToPixels(Point2D(0, 0)),
-                SDL_Color{255, 0, 0, 255},
-                SDL_FPoint{0},
-            },
-            {
-                coords.TranslateFromAbsoluteToPixels(Point2D(0, 1)),
-                SDL_Color{0, 0, 255, 255},
-                SDL_FPoint{0},
-            },
-            {
-                coords.TranslateFromAbsoluteToPixels(Point2D(1, 1)),
-                SDL_Color{0, 255, 0, 255},
+                SDL_Color{0, 255, 255, 255},
                 SDL_FPoint{0},
             },
         };

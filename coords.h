@@ -1,12 +1,12 @@
+#pragma once
 #include <SDL2/SDL.h>
 #include <vector>
 #include <iostream>
-class Point2D
+struct Point2D
 {
-public:
     float x;
     float y;
-    Point2D(float x, float y);
+    Point2D(float x = 0.f, float y = 0.f);
 };
 
 class coords
