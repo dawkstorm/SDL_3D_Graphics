@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/coords.cpp" "CMakeFiles/SDL_3D_Graphics.dir/coords.cpp.o" "gcc" "CMakeFiles/SDL_3D_Graphics.dir/coords.cpp.o.d"
   "/home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/main.cpp" "CMakeFiles/SDL_3D_Graphics.dir/main.cpp.o" "gcc" "CMakeFiles/SDL_3D_Graphics.dir/main.cpp.o.d"
   )
 

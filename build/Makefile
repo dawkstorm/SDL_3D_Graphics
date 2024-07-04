@@ -503,6 +503,30 @@ SDL_3D_Graphics/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/build
 .PHONY : SDL_3D_Graphics/fast
 
+coords.o: coords.cpp.o
+.PHONY : coords.o
+
+# target to build an object file
+coords.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/coords.cpp.o
+.PHONY : coords.cpp.o
+
+coords.i: coords.cpp.i
+.PHONY : coords.i
+
+# target to preprocess a source file
+coords.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/coords.cpp.i
+.PHONY : coords.cpp.i
+
+coords.s: coords.cpp.s
+.PHONY : coords.s
+
+# target to generate assembly for a file
+coords.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/coords.cpp.s
+.PHONY : coords.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -565,6 +589,9 @@ help:
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
 	@echo "... SDL_3D_Graphics"
+	@echo "... coords.o"
+	@echo "... coords.i"
+	@echo "... coords.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
