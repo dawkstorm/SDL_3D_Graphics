@@ -527,6 +527,30 @@ coords.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/coords.cpp.s
 .PHONY : coords.cpp.s
 
+cube.o: cube.cpp.o
+.PHONY : cube.o
+
+# target to build an object file
+cube.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.o
+.PHONY : cube.cpp.o
+
+cube.i: cube.cpp.i
+.PHONY : cube.i
+
+# target to preprocess a source file
+cube.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.i
+.PHONY : cube.cpp.i
+
+cube.s: cube.cpp.s
+.PHONY : cube.s
+
+# target to generate assembly for a file
+cube.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.s
+.PHONY : cube.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -575,6 +599,30 @@ renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.s
 .PHONY : renderer.cpp.s
 
+shape.o: shape.cpp.o
+.PHONY : shape.o
+
+# target to build an object file
+shape.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.o
+.PHONY : shape.cpp.o
+
+shape.i: shape.cpp.i
+.PHONY : shape.i
+
+# target to preprocess a source file
+shape.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.i
+.PHONY : shape.cpp.i
+
+shape.s: shape.cpp.s
+.PHONY : shape.s
+
+# target to generate assembly for a file
+shape.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.s
+.PHONY : shape.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -616,12 +664,18 @@ help:
 	@echo "... coords.o"
 	@echo "... coords.i"
 	@echo "... coords.s"
+	@echo "... cube.o"
+	@echo "... cube.i"
+	@echo "... cube.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... renderer.o"
 	@echo "... renderer.i"
 	@echo "... renderer.s"
+	@echo "... shape.o"
+	@echo "... shape.i"
+	@echo "... shape.s"
 .PHONY : help
 
 

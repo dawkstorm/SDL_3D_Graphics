@@ -1,6 +1,7 @@
-CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.o: \
- /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/renderer.cpp \
+CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.o: \
+ /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/cube.cpp \
  /usr/include/stdc-predef.h \
+ /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/Cube.h \
  /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/Shape.h \
  /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/Renderer.h \
  /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/Coords.h \

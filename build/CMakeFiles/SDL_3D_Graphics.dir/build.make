@@ -111,11 +111,41 @@ CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/renderer.cpp -o CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.s
 
+CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.o: CMakeFiles/SDL_3D_Graphics.dir/flags.make
+CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.o: /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/shape.cpp
+CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.o: CMakeFiles/SDL_3D_Graphics.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.o -MF CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.o.d -o CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.o -c /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/shape.cpp
+
+CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/shape.cpp > CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.i
+
+CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/shape.cpp -o CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.s
+
+CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.o: CMakeFiles/SDL_3D_Graphics.dir/flags.make
+CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.o: /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/cube.cpp
+CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.o: CMakeFiles/SDL_3D_Graphics.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.o -MF CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.o.d -o CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.o -c /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/cube.cpp
+
+CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/cube.cpp > CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.i
+
+CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/cube.cpp -o CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.s
+
 # Object files for target SDL_3D_Graphics
 SDL_3D_Graphics_OBJECTS = \
 "CMakeFiles/SDL_3D_Graphics.dir/main.cpp.o" \
 "CMakeFiles/SDL_3D_Graphics.dir/coords.cpp.o" \
-"CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.o"
+"CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.o" \
+"CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.o" \
+"CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.o"
 
 # External object files for target SDL_3D_Graphics
 SDL_3D_Graphics_EXTERNAL_OBJECTS =
@@ -123,11 +153,13 @@ SDL_3D_Graphics_EXTERNAL_OBJECTS =
 SDL_3D_Graphics: CMakeFiles/SDL_3D_Graphics.dir/main.cpp.o
 SDL_3D_Graphics: CMakeFiles/SDL_3D_Graphics.dir/coords.cpp.o
 SDL_3D_Graphics: CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.o
+SDL_3D_Graphics: CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.o
+SDL_3D_Graphics: CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.o
 SDL_3D_Graphics: CMakeFiles/SDL_3D_Graphics.dir/build.make
 SDL_3D_Graphics: /usr/lib/libSDL2main.a
 SDL_3D_Graphics: /usr/lib/libSDL2-2.0.so.0.3000.3
 SDL_3D_Graphics: CMakeFiles/SDL_3D_Graphics.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable SDL_3D_Graphics"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable SDL_3D_Graphics"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SDL_3D_Graphics.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

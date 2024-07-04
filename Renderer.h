@@ -1,5 +1,6 @@
 #pragma once
 #include "Coords.h"
+#include <SDL2/SDL.h>
 
 struct Point3D
 {
@@ -11,11 +12,11 @@ struct Point3D
 
 class Renderer3D
 {
-public:
-    float canvasDistance;
-    void render();
-    Renderer3D(float cd);
-    Point2D getProjectedPoint(Point3D point3D);
-
 private:
+public:
+    Coords coords;
+    float canvasDistance;
+    Renderer3D(float cd, Coords coords);
+    Renderer3D() = default;
+    Point2D getProjectedPoint(Point3D point3D);
 };

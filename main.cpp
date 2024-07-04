@@ -4,6 +4,7 @@
 #include <vector>
 #include "Coords.h"
 #include "Renderer.h"
+#include "Cube.h"
 static bool running = true;
 
 void PollEvents(SDL_Window *window, SDL_Renderer *renderer)
@@ -35,14 +36,16 @@ int main()
 
     window = SDL_CreateWindow("Meow", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 960, 540, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-    coords coords(window);
-    Renderer3D renderer3D(1.f);
+    Coords coords(window);
+    Renderer3D renderer3D(1.f, coords);
+    Cube cube(coords, renderer3D);
+    cube.setPos(Point3D(-1.5f, -2, 1.f));
 
     while (running)
     {
         PollEvents(window, renderer);
 
-        std::vector<SDL_Vertex> verts =
+        /*std::vector<SDL_Vertex> verts =
             {
                 {
                     coords.TranslateFromAbsoluteToPixels(renderer3D.getProjectedPoint(Point3D(0, 1, 0))),
@@ -76,10 +79,12 @@ int main()
                     SDL_FPoint{0},
                 },
             };
-        moving += 0.0001f;
+        */
+
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
-        SDL_RenderGeometry(renderer, nullptr, verts.data(), verts.size(), nullptr, 0);
+        // SDL_RenderGeometry(renderer, nullptr, cube.get2DVerticies().data(), cube.get2DVerticies().size(), nullptr, 0);
+        // SDL_RenderDrawLines
         SDL_RenderPresent(renderer);
     }
     SDL_DestroyRenderer(renderer);

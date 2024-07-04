@@ -9,14 +9,15 @@ struct Point2D
     Point2D(float x = 0.f, float y = 0.f);
 };
 
-class coords
+class Coords
 {
 private:
     int windowWidth;
     int windowHeight;
 
 public:
-    coords(SDL_Window *window);
+    Coords(SDL_Window *window);
+    Coords() = default;
     Point2D TranslateFromPixelsToAbsolute(SDL_FPoint coordinates);
     SDL_FPoint TranslateFromAbsoluteToPixels(Point2D coordinates);
 };

@@ -295,4 +295,6 @@ CMakeFiles/SDL_3D_Graphics.dir/main.cpp.o: \
  /usr/include/c++/14.1.1/bits/stl_bvector.h \
  /usr/include/c++/14.1.1/bits/vector.tcc \
  /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/Coords.h \
- /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/Renderer.h
+ /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/Renderer.h \
+ /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/Cube.h \
+ /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/Shape.h
