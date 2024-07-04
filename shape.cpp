@@ -23,13 +23,16 @@ std::vector<SDL_Vertex> Shape::get2DVerticies()
     return verticies;
 }
 
-std::vector<SDL_FPoint> Shape::get2DEdges()
+std::vector<SDL_Point> Shape::get2DEdges()
 {
-    std::vector<SDL_FPoint> verticies;
+    std::vector<SDL_Point> verticies;
     verticies.reserve(verts.size());
     for (int i = 0; i < verts.size(); i++)
     {
-        verticies.push_back(coords.TranslateFromAbsoluteToPixels(renderer3D.getProjectedPoint(verts[i])));
+        float pX = (int)coords.TranslateFromAbsoluteToPixels(renderer3D.getProjectedPoint(verts[i])).x;
+        float pY = (int)coords.TranslateFromAbsoluteToPixels(renderer3D.getProjectedPoint(verts[i])).y;
+        SDL_Point point = {pX, pY};
+        verticies.push_back(point);
     }
     return verticies;
 }

@@ -16,5 +16,5 @@ public:
     Point3D size;
     std::vector<Point3D> verts;
     std::vector<SDL_Vertex> get2DVerticies();
-    std::vector<SDL_FPoint> get2DEdges();
+    std::vector<SDL_Point> get2DEdges();
 };
