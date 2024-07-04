@@ -2,8 +2,8 @@
 #include <SDL2/SDL.h>
 #include "main.h"
 #include <vector>
-#include "coords.h"
-
+#include "Coords.h"
+#include "Renderer.h"
 static bool running = true;
 
 void PollEvents(SDL_Window *window, SDL_Renderer *renderer)
@@ -31,34 +31,53 @@ int main()
         return 1;
     }
 
+    float moving = 0;
+
     window = SDL_CreateWindow("Meow", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 960, 540, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     coords coords(window);
-
-    const std::vector<SDL_Vertex> verts =
-        {
-            {
-                coords.TranslateFromAbsoluteToPixels(Point2D(-1, -1)),
-                SDL_Color{255, 0, 255, 255},
-                SDL_FPoint{0},
-            },
-            {
-                coords.TranslateFromAbsoluteToPixels(Point2D(-1, 0)),
-                SDL_Color{255, 255, 255, 255},
-                SDL_FPoint{0},
-            },
-            {
-                coords.TranslateFromAbsoluteToPixels(Point2D(0, 0)),
-                SDL_Color{0, 255, 255, 255},
-                SDL_FPoint{0},
-            },
-        };
+    Renderer3D renderer3D(1.f);
 
     while (running)
     {
         PollEvents(window, renderer);
 
-        SDL_SetRenderDrawColor(renderer, 50, 0, 0, 255);
+        std::vector<SDL_Vertex> verts =
+            {
+                {
+                    coords.TranslateFromAbsoluteToPixels(renderer3D.getProjectedPoint(Point3D(0, 1, 0))),
+                    SDL_Color{255, 0, 255, 255},
+                    SDL_FPoint{0},
+                },
+                {
+                    coords.TranslateFromAbsoluteToPixels(renderer3D.getProjectedPoint(Point3D(0, 0, 0))),
+                    SDL_Color{255, 255, 255, 255},
+                    SDL_FPoint{0},
+                },
+                {
+                    coords.TranslateFromAbsoluteToPixels(renderer3D.getProjectedPoint(Point3D(1, 0, 0))),
+                    SDL_Color{0, 255, 255, 255},
+                    SDL_FPoint{0},
+                },
+
+                {
+                    coords.TranslateFromAbsoluteToPixels(renderer3D.getProjectedPoint(Point3D(0, 1, 0))),
+                    SDL_Color{255, 0, 255, 255},
+                    SDL_FPoint{0},
+                },
+                {
+                    coords.TranslateFromAbsoluteToPixels(renderer3D.getProjectedPoint(Point3D(1, 1, 0))),
+                    SDL_Color{255, 255, 255, 255},
+                    SDL_FPoint{0},
+                },
+                {
+                    coords.TranslateFromAbsoluteToPixels(renderer3D.getProjectedPoint(Point3D(1, 0, 0))),
+                    SDL_Color{0, 255, 255, 255},
+                    SDL_FPoint{0},
+                },
+            };
+        moving += 0.0001f;
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
         SDL_RenderGeometry(renderer, nullptr, verts.data(), verts.size(), nullptr, 0);
         SDL_RenderPresent(renderer);

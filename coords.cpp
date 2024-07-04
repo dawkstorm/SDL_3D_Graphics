@@ -1,6 +1,6 @@
-#include "coords.h"
+#include "Coords.h"
 
-Point2D::Point2D(float x = 0.f, float y = 0.f)
+Point2D::Point2D(float x, float y)
 {
     this->x = x;
     this->y = y;
@@ -24,6 +24,6 @@ SDL_FPoint coords::TranslateFromAbsoluteToPixels(Point2D coordinates)
 {
     SDL_FPoint result;
     result.x = coordinates.x * windowHeight * .5f + windowWidth * .5f;
-    result.y = coordinates.y * windowHeight * .5f + windowHeight * .5f;
+    result.y = -coordinates.y * windowHeight * .5f + windowHeight * .5f;
     return result;
 }

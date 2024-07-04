@@ -1,6 +1,16 @@
-#include "renderer.h"
+#include "Renderer.h"
 
-int canvasDistance = 1.f;
+Point3D::Point3D(float x, float y, float z)
+{
+    this->x = x;
+    this->y = y;
+    this->z = z;
+}
+
+Renderer3D::Renderer3D(float cd)
+{
+    canvasDistance = cd;
+}
 
 Point2D Renderer3D::getProjectedPoint(Point3D point3D)
 {

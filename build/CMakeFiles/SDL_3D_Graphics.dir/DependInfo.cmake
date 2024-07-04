@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/coords.cpp" "CMakeFiles/SDL_3D_Graphics.dir/coords.cpp.o" "gcc" "CMakeFiles/SDL_3D_Graphics.dir/coords.cpp.o.d"
   "/home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/main.cpp" "CMakeFiles/SDL_3D_Graphics.dir/main.cpp.o" "gcc" "CMakeFiles/SDL_3D_Graphics.dir/main.cpp.o.d"
+  "/home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/renderer.cpp" "CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.o" "gcc" "CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

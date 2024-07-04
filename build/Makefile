@@ -551,6 +551,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+renderer.o: renderer.cpp.o
+.PHONY : renderer.o
+
+# target to build an object file
+renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.o
+.PHONY : renderer.cpp.o
+
+renderer.i: renderer.cpp.i
+.PHONY : renderer.i
+
+# target to preprocess a source file
+renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.i
+.PHONY : renderer.cpp.i
+
+renderer.s: renderer.cpp.s
+.PHONY : renderer.s
+
+# target to generate assembly for a file
+renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.s
+.PHONY : renderer.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -595,6 +619,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... renderer.o"
+	@echo "... renderer.i"
+	@echo "... renderer.s"
 .PHONY : help
 
 

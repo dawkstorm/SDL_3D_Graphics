@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/SDL_3D_Graphics.dir/coords.cpp.o.d"
   "CMakeFiles/SDL_3D_Graphics.dir/main.cpp.o"
   "CMakeFiles/SDL_3D_Graphics.dir/main.cpp.o.d"
+  "CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.o"
+  "CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.o.d"
   "SDL_3D_Graphics"
   "SDL_3D_Graphics.pdb"
 )

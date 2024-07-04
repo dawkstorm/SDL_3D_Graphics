@@ -1,6 +1,7 @@
-CMakeFiles/SDL_3D_Graphics.dir/coords.cpp.o: \
- /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/coords.cpp \
+CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.o: \
+ /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/renderer.cpp \
  /usr/include/stdc-predef.h \
+ /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/Renderer.h \
  /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/Coords.h \
  /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
  /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
