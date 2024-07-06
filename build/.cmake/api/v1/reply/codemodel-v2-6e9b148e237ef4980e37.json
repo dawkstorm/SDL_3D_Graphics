@@ -55,7 +55,7 @@
 					[
 						0
 					],
-					"name" : "SDL_3D_Graphics",
+					"name" : "graphics3D",
 					"targetIndexes" : 
 					[
 						0,
@@ -290,9 +290,9 @@
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "SDL_3D_Graphics::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-SDL_3D_Graphics-Debug-bf1869acbd5cbb92b9e1.json",
-					"name" : "SDL_3D_Graphics",
+					"id" : "graphics3D::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-graphics3D-Debug-e42f05257d39f97a2df1.json",
+					"name" : "graphics3D",
 					"projectIndex" : 0
 				}
 			]

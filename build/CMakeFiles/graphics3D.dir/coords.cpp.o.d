@@ -1,8 +1,6 @@
-CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.o: \
- /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/renderer.cpp \
+CMakeFiles/graphics3D.dir/coords.cpp.o: \
+ /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/coords.cpp \
  /usr/include/stdc-predef.h \
- /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/Shape.h \
- /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/Renderer.h \
  /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/Coords.h \
  /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
  /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
@@ -294,6 +292,4 @@ CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.o: \
  /usr/include/c++/14.1.1/bits/locale_facets.tcc \
  /usr/include/c++/14.1.1/bits/basic_ios.tcc \
  /usr/include/c++/14.1.1/bits/ostream.tcc /usr/include/c++/14.1.1/istream \
- /usr/include/c++/14.1.1/bits/istream.tcc \
- /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/MatrixOperations.h \
- /usr/include/c++/14.1.1/array /usr/include/c++/14.1.1/compare
+ /usr/include/c++/14.1.1/bits/istream.tcc

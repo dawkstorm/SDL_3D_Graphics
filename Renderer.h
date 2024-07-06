@@ -15,7 +15,7 @@ class Renderer3D
 private:
 public:
     Coords coords;
-    float canvasDistance;
+    float focalLength;
     Renderer3D(float cd, Coords coords);
     Renderer3D() = default;
     Point2D getProjectedPoint(Point3D point3D);

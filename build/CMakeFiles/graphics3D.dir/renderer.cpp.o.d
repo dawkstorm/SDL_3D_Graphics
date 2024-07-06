@@ -1,4 +1,4 @@
-CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.o: \
+CMakeFiles/graphics3D.dir/renderer.cpp.o: \
  /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/renderer.cpp \
  /usr/include/stdc-predef.h \
  /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/Shape.h \

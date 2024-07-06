@@ -297,4 +297,6 @@ CMakeFiles/SDL_3D_Graphics.dir/main.cpp.o: \
  /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/Coords.h \
  /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/Renderer.h \
  /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/Cube.h \
- /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/Shape.h
+ /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/Shape.h \
+ /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/MatrixOperations.h \
+ /usr/include/c++/14.1.1/array /usr/include/c++/14.1.1/compare

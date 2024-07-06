@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "SDL_3D_Graphics"
+			"path" : "graphics3D"
 		}
 	],
 	"backtrace" : 1,
@@ -67,11 +67,12 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5
 			]
 		}
 	],
-	"id" : "SDL_3D_Graphics::@6890427a1f51a3e7e1df",
+	"id" : "graphics3D::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -97,8 +98,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "SDL_3D_Graphics",
-	"nameOnDisk" : "SDL_3D_Graphics",
+	"name" : "graphics3D",
+	"nameOnDisk" : "graphics3D",
 	"paths" : 
 	{
 		"build" : ".",
@@ -114,7 +115,8 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5
 			]
 		}
 	],
@@ -148,6 +150,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "cube.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "matrixoperations.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

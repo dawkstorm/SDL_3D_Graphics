@@ -87,5 +87,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ContinuousCoverage.dir/DependInfo.cmake"
   "CMakeFiles/ContinuousMemCheck.dir/DependInfo.cmake"
   "CMakeFiles/ContinuousSubmit.dir/DependInfo.cmake"
-  "CMakeFiles/SDL_3D_Graphics.dir/DependInfo.cmake"
+  "CMakeFiles/graphics3D.dir/DependInfo.cmake"
   )

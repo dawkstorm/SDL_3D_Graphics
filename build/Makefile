@@ -491,24 +491,24 @@ ContinuousSubmit/fast:
 .PHONY : ContinuousSubmit/fast
 
 #=============================================================================
-# Target rules for targets named SDL_3D_Graphics
+# Target rules for targets named graphics3D
 
 # Build rule for target.
-SDL_3D_Graphics: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SDL_3D_Graphics
-.PHONY : SDL_3D_Graphics
+graphics3D: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 graphics3D
+.PHONY : graphics3D
 
 # fast build rule for target.
-SDL_3D_Graphics/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/build
-.PHONY : SDL_3D_Graphics/fast
+graphics3D/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphics3D.dir/build.make CMakeFiles/graphics3D.dir/build
+.PHONY : graphics3D/fast
 
 coords.o: coords.cpp.o
 .PHONY : coords.o
 
 # target to build an object file
 coords.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/coords.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphics3D.dir/build.make CMakeFiles/graphics3D.dir/coords.cpp.o
 .PHONY : coords.cpp.o
 
 coords.i: coords.cpp.i
@@ -516,7 +516,7 @@ coords.i: coords.cpp.i
 
 # target to preprocess a source file
 coords.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/coords.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphics3D.dir/build.make CMakeFiles/graphics3D.dir/coords.cpp.i
 .PHONY : coords.cpp.i
 
 coords.s: coords.cpp.s
@@ -524,7 +524,7 @@ coords.s: coords.cpp.s
 
 # target to generate assembly for a file
 coords.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/coords.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphics3D.dir/build.make CMakeFiles/graphics3D.dir/coords.cpp.s
 .PHONY : coords.cpp.s
 
 cube.o: cube.cpp.o
@@ -532,7 +532,7 @@ cube.o: cube.cpp.o
 
 # target to build an object file
 cube.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphics3D.dir/build.make CMakeFiles/graphics3D.dir/cube.cpp.o
 .PHONY : cube.cpp.o
 
 cube.i: cube.cpp.i
@@ -540,7 +540,7 @@ cube.i: cube.cpp.i
 
 # target to preprocess a source file
 cube.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphics3D.dir/build.make CMakeFiles/graphics3D.dir/cube.cpp.i
 .PHONY : cube.cpp.i
 
 cube.s: cube.cpp.s
@@ -548,7 +548,7 @@ cube.s: cube.cpp.s
 
 # target to generate assembly for a file
 cube.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/cube.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphics3D.dir/build.make CMakeFiles/graphics3D.dir/cube.cpp.s
 .PHONY : cube.cpp.s
 
 main.o: main.cpp.o
@@ -556,7 +556,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphics3D.dir/build.make CMakeFiles/graphics3D.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -564,7 +564,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphics3D.dir/build.make CMakeFiles/graphics3D.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -572,15 +572,39 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphics3D.dir/build.make CMakeFiles/graphics3D.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+matrixoperations.o: matrixoperations.cpp.o
+.PHONY : matrixoperations.o
+
+# target to build an object file
+matrixoperations.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphics3D.dir/build.make CMakeFiles/graphics3D.dir/matrixoperations.cpp.o
+.PHONY : matrixoperations.cpp.o
+
+matrixoperations.i: matrixoperations.cpp.i
+.PHONY : matrixoperations.i
+
+# target to preprocess a source file
+matrixoperations.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphics3D.dir/build.make CMakeFiles/graphics3D.dir/matrixoperations.cpp.i
+.PHONY : matrixoperations.cpp.i
+
+matrixoperations.s: matrixoperations.cpp.s
+.PHONY : matrixoperations.s
+
+# target to generate assembly for a file
+matrixoperations.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphics3D.dir/build.make CMakeFiles/graphics3D.dir/matrixoperations.cpp.s
+.PHONY : matrixoperations.cpp.s
 
 renderer.o: renderer.cpp.o
 .PHONY : renderer.o
 
 # target to build an object file
 renderer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphics3D.dir/build.make CMakeFiles/graphics3D.dir/renderer.cpp.o
 .PHONY : renderer.cpp.o
 
 renderer.i: renderer.cpp.i
@@ -588,7 +612,7 @@ renderer.i: renderer.cpp.i
 
 # target to preprocess a source file
 renderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphics3D.dir/build.make CMakeFiles/graphics3D.dir/renderer.cpp.i
 .PHONY : renderer.cpp.i
 
 renderer.s: renderer.cpp.s
@@ -596,7 +620,7 @@ renderer.s: renderer.cpp.s
 
 # target to generate assembly for a file
 renderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphics3D.dir/build.make CMakeFiles/graphics3D.dir/renderer.cpp.s
 .PHONY : renderer.cpp.s
 
 shape.o: shape.cpp.o
@@ -604,7 +628,7 @@ shape.o: shape.cpp.o
 
 # target to build an object file
 shape.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphics3D.dir/build.make CMakeFiles/graphics3D.dir/shape.cpp.o
 .PHONY : shape.cpp.o
 
 shape.i: shape.cpp.i
@@ -612,7 +636,7 @@ shape.i: shape.cpp.i
 
 # target to preprocess a source file
 shape.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphics3D.dir/build.make CMakeFiles/graphics3D.dir/shape.cpp.i
 .PHONY : shape.cpp.i
 
 shape.s: shape.cpp.s
@@ -620,7 +644,7 @@ shape.s: shape.cpp.s
 
 # target to generate assembly for a file
 shape.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDL_3D_Graphics.dir/build.make CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphics3D.dir/build.make CMakeFiles/graphics3D.dir/shape.cpp.s
 .PHONY : shape.cpp.s
 
 # Help Target
@@ -660,7 +684,7 @@ help:
 	@echo "... NightlySubmit"
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
-	@echo "... SDL_3D_Graphics"
+	@echo "... graphics3D"
 	@echo "... coords.o"
 	@echo "... coords.i"
 	@echo "... coords.s"
@@ -670,6 +694,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... matrixoperations.o"
+	@echo "... matrixoperations.i"
+	@echo "... matrixoperations.s"
 	@echo "... renderer.o"
 	@echo "... renderer.i"
 	@echo "... renderer.s"

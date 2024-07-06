@@ -24,9 +24,9 @@ int main()
     window = SDL_CreateWindow("Meow", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1600, 900, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     Coords coords(window);
-    Renderer3D renderer3D(1.f, coords);
+    Renderer3D renderer3D(1.5f, coords);
     Cube cube(coords, renderer3D);
-    cube.setPos(Point3D(-1.5f, 1, 1.f));
+    cube.setPos(Point3D(-1.5f, 0, 1.f));
 
     while (running)
     {
@@ -44,22 +44,22 @@ int main()
                 switch (ev.key.keysym.sym)
                 {
                 case SDLK_DOWN:
-                    cube.setPos(Point3D(cube.position.x, cube.position.y - 0.1f, cube.position.z));
+                    cube.setPos(Point3D(cube.pos.x, cube.pos.y - 0.1f, cube.pos.z));
                     break;
                 case SDLK_UP:
-                    cube.setPos(Point3D(cube.position.x, cube.position.y + 0.1f, cube.position.z));
+                    cube.setPos(Point3D(cube.pos.x, cube.pos.y + 0.1f, cube.pos.z));
                     break;
                 case SDLK_LEFT:
-                    cube.setPos(Point3D(cube.position.x - 0.1f, cube.position.y, cube.position.z));
+                    cube.setPos(Point3D(cube.pos.x - 0.1f, cube.pos.y, cube.pos.z));
                     break;
                 case SDLK_RIGHT:
-                    cube.setPos(Point3D(cube.position.x + 0.1f, cube.position.y, cube.position.z));
+                    cube.setPos(Point3D(cube.pos.x + 0.1f, cube.pos.y, cube.pos.z));
                     break;
                 case SDLK_g:
-                    cube.setPos(Point3D(cube.position.x, cube.position.y, cube.position.z - 0.1f));
+                    cube.setPos(Point3D(cube.pos.x, cube.pos.y, cube.pos.z - 0.1f));
                     break;
                 case SDLK_f:
-                    cube.setPos(Point3D(cube.position.x, cube.position.y, cube.position.z + 0.1f));
+                    cube.setPos(Point3D(cube.pos.x, cube.pos.y, cube.pos.z + 0.1f));
                     break;
                 }
             }
@@ -101,11 +101,12 @@ int main()
             };
         */
 
+        SDL_Color color = {0, 129, 12, 255};
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
-        SDL_RenderGeometry(renderer, nullptr, cube.get2DVerticies().data(), cube.get2DVerticies().size(), nullptr, 0);
-        // SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-        SDL_RenderDrawLines(renderer, cube.get2DEdges().data(), cube.get2DEdges().size());
+        // SDL_RenderGeometry(renderer, nullptr, cube.get2DVerticies(color).data(), cube.get2DVerticies(color).size(), nullptr, 0);
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+        SDL_RenderDrawLines(renderer, cube.get2DVertsPoints().data(), cube.get2DVertsPoints().size());
         SDL_RenderPresent(renderer);
     }
     SDL_DestroyRenderer(renderer);

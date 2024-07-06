@@ -891,7 +891,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "SDL_3D_Graphics"
+			"value" : "graphics3D"
 		},
 		{
 			"name" : "CMAKE_PROJECT_VERSION",
@@ -1548,6 +1548,42 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "TRUE"
+		},
+		{
+			"name" : "graphics3D_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/build"
+		},
+		{
+			"name" : "graphics3D_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "graphics3D_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/dawkstorm/VSCode_Projects/SDL_3D_Graphics"
 		}
 	],
 	"kind" : "cache",

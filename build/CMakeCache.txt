@@ -151,7 +151,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=SDL_3D_Graphics
+CMAKE_PROJECT_NAME:STATIC=graphics3D
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=0.1
@@ -275,6 +275,15 @@ SDL_3D_Graphics_SOURCE_DIR:STATIC=/home/dawkstorm/VSCode_Projects/SDL_3D_Graphic
 
 //Name of the computer/site where compile is being run
 SITE:STRING=dawkstorm-acer
+
+//Value Computed by CMake
+graphics3D_BINARY_DIR:STATIC=/home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/build
+
+//Value Computed by CMake
+graphics3D_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+graphics3D_SOURCE_DIR:STATIC=/home/dawkstorm/VSCode_Projects/SDL_3D_Graphics
 
 
 ########################

@@ -294,4 +294,6 @@ CMakeFiles/SDL_3D_Graphics.dir/shape.cpp.o: \
  /usr/include/c++/14.1.1/bits/locale_facets.tcc \
  /usr/include/c++/14.1.1/bits/basic_ios.tcc \
  /usr/include/c++/14.1.1/bits/ostream.tcc /usr/include/c++/14.1.1/istream \
- /usr/include/c++/14.1.1/bits/istream.tcc
+ /usr/include/c++/14.1.1/bits/istream.tcc \
+ /home/dawkstorm/VSCode_Projects/SDL_3D_Graphics/MatrixOperations.h \
+ /usr/include/c++/14.1.1/array /usr/include/c++/14.1.1/compare
