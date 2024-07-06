@@ -2,12 +2,12 @@
 #include "Coords.h"
 #include <SDL2/SDL.h>
 
-struct Point3D
+struct Vector3
 {
     float x;
     float y;
     float z;
-    Point3D(float x = 0.f, float y = 0.f, float z = 0.f);
+    Vector3(float x = 0.f, float y = 0.f, float z = 0.f);
 };
 
 class Renderer3D
@@ -18,5 +18,5 @@ public:
     float focalLength;
     Renderer3D(float cd, Coords coords);
     Renderer3D() = default;
-    Point2D getProjectedPoint(Point3D point3D);
+    Vector2 getProjectedPoint(Vector3 point3D);
 };

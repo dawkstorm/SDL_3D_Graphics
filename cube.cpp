@@ -5,13 +5,13 @@ void Cube::updateVertex()
     verts.resize(basicVerts.size());
     for (int i = 0; i < basicVerts.size(); i++)
     {
-        Point3D rotatedVert = Matrix::getRotatedPos(basicVerts[i], Matrix::xRotation(15));
+        Vector3 rotatedVert = Matrix::getRotatedPos(basicVerts[i], Matrix::xRotation(rotation.x));
         std::cout << rotatedVert.x << " " << rotatedVert.y << " " << rotatedVert.z << std::endl;
-        verts[i] = Matrix::addPoints(basicVerts[i], pos);
+        verts[i] = Matrix::addPoints(rotatedVert, pos);
     }
 }
 
-void Cube::setPos(Point3D point3D)
+void Cube::setPos(Vector3 point3D)
 {
     pos = point3D;
     updateVertex();
@@ -24,8 +24,8 @@ Cube::Cube(Coords coords, Renderer3D renderer3D)
     updateVertex();
 }
 
-void Cube::rotateX(float angle)
+void Cube::rotate(Vector3 rotation)
 {
-    angleX = angle;
+    this->rotation = Matrix::addPoints(this->rotation, rotation);
     updateVertex();
 }

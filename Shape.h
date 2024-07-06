@@ -14,10 +14,11 @@ protected:
 public:
     Shape(Coords coords, Renderer3D renderer3D);
     Shape() = default;
-    Point3D pos;
-    Point3D size;
-    std::vector<Point3D> verts;
-    std::vector<Point3D> edges;
+    Vector3 pos;
+    Vector3 size;
+    Vector3 rotation;
+    std::vector<Vector3> verts;
+    std::vector<Vector3> edges;
     std::vector<SDL_Vertex> get2DVerticies(SDL_Color &color);
     std::vector<SDL_Point> get2DVertsPoints();
 };

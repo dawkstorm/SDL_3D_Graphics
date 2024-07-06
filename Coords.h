@@ -2,11 +2,11 @@
 #include <SDL2/SDL.h>
 #include <vector>
 #include <iostream>
-struct Point2D
+struct Vector2
 {
     float x;
     float y;
-    Point2D(float x = 0.f, float y = 0.f);
+    Vector2(float x = 0.f, float y = 0.f);
 };
 
 class Coords
@@ -18,6 +18,6 @@ private:
 public:
     Coords(SDL_Window *window);
     Coords() = default;
-    Point2D TranslateFromPixelsToAbsolute(SDL_FPoint coordinates);
-    SDL_FPoint TranslateFromAbsoluteToPixels(Point2D coordinates);
+    Vector2 TranslateFromPixelsToAbsolute(SDL_FPoint coordinates);
+    SDL_FPoint TranslateFromAbsoluteToPixels(Vector2 coordinates);
 };

@@ -9,10 +9,10 @@ std::array<std::array<float, 3>, 3> Matrix::xRotation(float angle)
     return matrix;
 }
 
-Point3D Matrix::getRotatedPos(Point3D vertPos, const std::array<std::array<float, 3>, 3> &rotMatrix)
+Vector3 Matrix::getRotatedPos(Vector3 vertPos, const std::array<std::array<float, 3>, 3> &rotMatrix)
 {
-    int posArr[3] = {{vertPos.x}, {vertPos.y}, {vertPos.z}};
-    int rslt[3];
+    float posArr[3] = {{vertPos.x}, {vertPos.y}, {vertPos.z}};
+    float rslt[3];
     for (int i = 0; i < 3; i++)
     {
         rslt[i] = 0;
@@ -21,12 +21,12 @@ Point3D Matrix::getRotatedPos(Point3D vertPos, const std::array<std::array<float
             rslt[i] += rotMatrix[i][k] * posArr[k];
         }
     }
-    Point3D newPos(rslt[0], rslt[1], rslt[2]);
+    Vector3 newPos(rslt[0], rslt[1], rslt[2]);
     return newPos;
 }
 
-Point3D Matrix::addPoints(Point3D p1, Point3D p2)
+Vector3 Matrix::addPoints(Vector3 p1, Vector3 p2)
 {
-    Point3D sum(p1.x + p2.x, p1.y + p2.y, p1.z + p2.z);
+    Vector3 sum(p1.x + p2.x, p1.y + p2.y, p1.z + p2.z);
     return sum;
 }

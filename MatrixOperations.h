@@ -5,6 +5,6 @@ class Matrix
 private:
 public:
     static std::array<std::array<float, 3>, 3> xRotation(float angle);
-    static Point3D getRotatedPos(Point3D vertPos, const std::array<std::array<float, 3>, 3> &rotMatrix);
-    static Point3D addPoints(Point3D p1, Point3D p2);
+    static Vector3 getRotatedPos(Vector3 vertPos, const std::array<std::array<float, 3>, 3> &rotMatrix);
+    static Vector3 addPoints(Vector3 p1, Vector3 p2);
 };

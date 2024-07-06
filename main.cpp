@@ -26,7 +26,7 @@ int main()
     Coords coords(window);
     Renderer3D renderer3D(1.5f, coords);
     Cube cube(coords, renderer3D);
-    cube.setPos(Point3D(-1.5f, 0, 1.f));
+    cube.setPos(Vector3(-1.5f, 0, 1.f));
 
     while (running)
     {
@@ -44,22 +44,29 @@ int main()
                 switch (ev.key.keysym.sym)
                 {
                 case SDLK_DOWN:
-                    cube.setPos(Point3D(cube.pos.x, cube.pos.y - 0.1f, cube.pos.z));
+                    cube.setPos(Vector3(cube.pos.x, cube.pos.y - 0.1f, cube.pos.z));
                     break;
                 case SDLK_UP:
-                    cube.setPos(Point3D(cube.pos.x, cube.pos.y + 0.1f, cube.pos.z));
+                    cube.setPos(Vector3(cube.pos.x, cube.pos.y + 0.1f, cube.pos.z));
                     break;
                 case SDLK_LEFT:
-                    cube.setPos(Point3D(cube.pos.x - 0.1f, cube.pos.y, cube.pos.z));
+                    cube.setPos(Vector3(cube.pos.x - 0.1f, cube.pos.y, cube.pos.z));
                     break;
                 case SDLK_RIGHT:
-                    cube.setPos(Point3D(cube.pos.x + 0.1f, cube.pos.y, cube.pos.z));
+                    cube.setPos(Vector3(cube.pos.x + 0.1f, cube.pos.y, cube.pos.z));
                     break;
                 case SDLK_g:
-                    cube.setPos(Point3D(cube.pos.x, cube.pos.y, cube.pos.z - 0.1f));
+                    cube.setPos(Vector3(cube.pos.x, cube.pos.y, cube.pos.z - 0.1f));
                     break;
                 case SDLK_f:
-                    cube.setPos(Point3D(cube.pos.x, cube.pos.y, cube.pos.z + 0.1f));
+                    cube.setPos(Vector3(cube.pos.x, cube.pos.y, cube.pos.z + 0.1f));
+                    break;
+
+                case SDLK_u:
+                    cube.rotate(Vector3(0.1f, 0, 0));
+                    break;
+                case SDLK_j:
+                    cube.rotate(Vector3(-0.1f, 0, 0));
                     break;
                 }
             }
