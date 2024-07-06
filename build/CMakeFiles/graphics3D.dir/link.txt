@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/graphics3D.dir/main.cpp.o CMakeFiles/graphics3D.dir/coords.cpp.o CMakeFiles/graphics3D.dir/renderer.cpp.o CMakeFiles/graphics3D.dir/shape.cpp.o CMakeFiles/graphics3D.dir/cube.cpp.o CMakeFiles/graphics3D.dir/matrixoperations.cpp.o -o graphics3D  /usr/lib/libSDL2main.a /usr/lib/libSDL2-2.0.so.0.3000.3
