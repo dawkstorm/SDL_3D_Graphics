@@ -63,50 +63,26 @@ int main()
                     break;
 
                 case SDLK_u:
-                    cube.rotate(Vector3(0.1f, 0, 0));
+                    cube.rotate(Vector3(-0.1f, 0, 0));
                     break;
                 case SDLK_j:
-                    cube.rotate(Vector3(-0.1f, 0, 0));
+                    cube.rotate(Vector3(0.1f, 0, 0));
+                    break;
+                case SDLK_h:
+                    cube.rotate(Vector3(0, 0, 0.1f));
+                    break;
+                case SDLK_k:
+                    cube.rotate(Vector3(0, 0, -0.1f));
+                    break;
+                case SDLK_y:
+                    cube.rotate(Vector3(0, 0.1f, 0));
+                    break;
+                case SDLK_i:
+                    cube.rotate(Vector3(0, -0.1f, 0));
                     break;
                 }
             }
         }
-
-        /*std::vector<SDL_Vertex> verts =
-            {
-                {
-                    coords.TranslateFromAbsoluteToPixels(renderer3D.getProjectedPoint(Point3D(0, 1, 0))),
-                    SDL_Color{255, 0, 255, 255},
-                    SDL_FPoint{0},
-                },
-                {
-                    coords.TranslateFromAbsoluteToPixels(renderer3D.getProjectedPoint(Point3D(0, 0, 0))),
-                    SDL_Color{255, 255, 255, 255},
-                    SDL_FPoint{0},
-                },
-                {
-                    coords.TranslateFromAbsoluteToPixels(renderer3D.getProjectedPoint(Point3D(1, 0, 0))),
-                    SDL_Color{0, 255, 255, 255},
-                    SDL_FPoint{0},
-                },
-
-                {
-                    coords.TranslateFromAbsoluteToPixels(renderer3D.getProjectedPoint(Point3D(0, 1, 0))),
-                    SDL_Color{255, 0, 255, 255},
-                    SDL_FPoint{0},
-                },
-                {
-                    coords.TranslateFromAbsoluteToPixels(renderer3D.getProjectedPoint(Point3D(1, 1, 0))),
-                    SDL_Color{255, 255, 255, 255},
-                    SDL_FPoint{0},
-                },
-                {
-                    coords.TranslateFromAbsoluteToPixels(renderer3D.getProjectedPoint(Point3D(1, 0, 0))),
-                    SDL_Color{0, 255, 255, 255},
-                    SDL_FPoint{0},
-                },
-            };
-        */
 
         SDL_Color color = {0, 129, 12, 255};
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);

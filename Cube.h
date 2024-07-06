@@ -9,6 +9,7 @@ public:
     Cube(Coords coords, Renderer3D renderer3D);
     Cube() = default;
     void setPos(Vector3 point3D);
+    void move(Vector3 point3D);
     void rotate(Vector3 rotation);
     const std::vector<Vector3> basicVerts = {
         Vector3(0, 1, 0), // Top front vertex
