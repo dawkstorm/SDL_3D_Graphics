@@ -17,6 +17,7 @@ public:
     Vector3 pos;
     Vector3 size;
     Vector3 rotation;
+    Vector3 pivot;
     std::vector<Vector3> verts;
     std::vector<Vector3> edges;
     std::vector<SDL_Vertex> get2DVerticies(SDL_Color &color);

@@ -46,3 +46,9 @@ Vector3 Matrix::addVectors(Vector3 p1, Vector3 p2)
     Vector3 sum(p1.x + p2.x, p1.y + p2.y, p1.z + p2.z);
     return sum;
 }
+
+Vector3 Matrix::subtractVectors(Vector3 p1, Vector3 p2)
+{
+    Vector3 sum(p1.x - p2.x, p1.y - p2.y, p1.z - p2.z);
+    return sum;
+}

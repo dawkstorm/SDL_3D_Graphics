@@ -13,7 +13,8 @@ void Cube::updateVertex()
     verts.resize(basicVerts.size());
     for (int i = 0; i < basicVerts.size(); i++)
     {
-        Vector3 rotatedVert = multiplyByRotationVectors(basicVerts[i], rotation);
+        Vector3 pivotedVert = Matrix::subtractVectors(basicVerts[i], pivot);
+        Vector3 rotatedVert = multiplyByRotationVectors(pivotedVert, rotation);
         verts[i] = Matrix::addVectors(rotatedVert, pos);
     }
 }
@@ -33,6 +34,7 @@ Cube::Cube(Coords coords, Renderer3D renderer3D)
 {
     this->coords = coords;
     this->renderer3D = renderer3D;
+    pivot = Vector3(0.5f, 0.5f, 0.5f);
     updateVertex();
 }
 

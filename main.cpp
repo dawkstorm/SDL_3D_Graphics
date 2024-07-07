@@ -83,8 +83,7 @@ int main()
                 }
             }
         }
-
-        SDL_Color color = {0, 129, 12, 255};
+        cube.rotate(Vector3(0, 0.002f, 0));
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
         // SDL_RenderGeometry(renderer, nullptr, cube.get2DVerticies(color).data(), cube.get2DVerticies(color).size(), nullptr, 0);
