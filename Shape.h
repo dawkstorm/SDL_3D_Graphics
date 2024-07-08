@@ -22,4 +22,5 @@ public:
     std::vector<vec3> edges;
     std::vector<SDL_Vertex> get2DVerticies(SDL_Color &color);
     std::vector<SDL_Point> get2DVertsPoints();
+    void renderVertecies(SDL_Renderer *renderer, SDL_Color color);
 };

@@ -21,12 +21,12 @@ int main()
 
     float moving = 0;
 
-    window = SDL_CreateWindow("Meow", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
+    window = SDL_CreateWindow("Meow", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1600, 900, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     Coords coords(window);
-    Renderer3D renderer3D(1.5f, coords);
+    Renderer3D renderer3D(1.5f, &coords);
     Cube cube(&coords, &renderer3D);
-    cube.setPos(vec3(-1.5f, 0, 1.f));
+    cube.setPos(vec3(-1.5f, 0, 0.f));
 
     bool resized = false;
     while (running)
@@ -94,15 +94,13 @@ int main()
         {
             resized = false;
             coords = Coords(window);
-            renderer3D = Renderer3D(1.5f, coords);
         }
 
         SDL_Color color = {0, 129, 12, 255};
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
         // SDL_RenderGeometry(renderer, nullptr, cube.get2DVerticies(color).data(), cube.get2DVerticies(color).size(), nullptr, 0);
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-        SDL_RenderDrawLines(renderer, cube.get2DVertsPoints().data(), cube.get2DVertsPoints().size());
+        cube.renderVertecies(renderer, color);
         SDL_RenderPresent(renderer);
     }
     SDL_DestroyRenderer(renderer);

@@ -18,6 +18,7 @@ private:
 public:
     Coords(SDL_Window *window);
     Coords() = default;
-    vec2 TranslateFromPixelsToAbsolute(SDL_FPoint coordinates);
-    SDL_FPoint TranslateFromAbsoluteToPixels(vec2 coordinates);
+    vec2 translateFromPixelsToAbsolute(SDL_FPoint coordinates);
+    SDL_FPoint translateFromAbsoluteToPixels(vec2 coordinates);
+    float getAspectRatio();
 };
