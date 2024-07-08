@@ -25,7 +25,7 @@ std::array<std::array<float, 3>, 3> Matrix::zRotation(float angle)
     return matrix;
 }
 
-Vector3 Matrix::getRotatedPos(Vector3 vertPos, const std::array<std::array<float, 3>, 3> &rotMatrix)
+vec3 Matrix::getRotatedPos(vec3 vertPos, const std::array<std::array<float, 3>, 3> &rotMatrix)
 {
     float posArr[3] = {{vertPos.x}, {vertPos.y}, {vertPos.z}};
     float rslt[3];
@@ -37,18 +37,18 @@ Vector3 Matrix::getRotatedPos(Vector3 vertPos, const std::array<std::array<float
             rslt[i] += rotMatrix[i][k] * posArr[k];
         }
     }
-    Vector3 newPos(rslt[0], rslt[1], rslt[2]);
+    vec3 newPos(rslt[0], rslt[1], rslt[2]);
     return newPos;
 }
 
-Vector3 Matrix::addVectors(Vector3 p1, Vector3 p2)
+vec3 Matrix::addVectors(vec3 p1, vec3 p2)
 {
-    Vector3 sum(p1.x + p2.x, p1.y + p2.y, p1.z + p2.z);
+    vec3 sum(p1.x + p2.x, p1.y + p2.y, p1.z + p2.z);
     return sum;
 }
 
-Vector3 Matrix::subtractVectors(Vector3 p1, Vector3 p2)
+vec3 Matrix::subtractVectors(vec3 p1, vec3 p2)
 {
-    Vector3 sum(p1.x - p2.x, p1.y - p2.y, p1.z - p2.z);
+    vec3 sum(p1.x - p2.x, p1.y - p2.y, p1.z - p2.z);
     return sum;
 }

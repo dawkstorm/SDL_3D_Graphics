@@ -1,6 +1,6 @@
 #include "Coords.h"
 
-Vector2::Vector2(float x, float y)
+vec2::vec2(float x, float y)
 {
     this->x = x;
     this->y = y;
@@ -12,15 +12,15 @@ Coords::Coords(SDL_Window *window)
     windowHeight = SDL_GetWindowSurface(window)->h;
 }
 
-Vector2 Coords::TranslateFromPixelsToAbsolute(SDL_FPoint coordinates)
+vec2 Coords::TranslateFromPixelsToAbsolute(SDL_FPoint coordinates)
 {
-    Vector2 result;
+    vec2 result;
     result.x = (2 * coordinates.x - windowHeight) / windowWidth;
     result.y = (2 * coordinates.y - windowHeight) / windowHeight;
     return result;
 }
 
-SDL_FPoint Coords::TranslateFromAbsoluteToPixels(Vector2 coordinates)
+SDL_FPoint Coords::TranslateFromAbsoluteToPixels(vec2 coordinates)
 {
     SDL_FPoint result;
     result.x = coordinates.x * windowHeight * .5f + windowWidth * .5f;
