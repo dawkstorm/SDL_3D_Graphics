@@ -14,7 +14,8 @@ void Cube::updateVertex()
     for (int i = 0; i < basicVerts.size(); i++)
     {
         vec3 pivotedVert = Matrix::subtractVectors(basicVerts[i], pivot);
-        vec3 rotatedVert = multiplyByRotationVectors(pivotedVert, rotation);
+        vec3 scaledVert = Matrix::multiplyElements(pivotedVert, size);
+        vec3 rotatedVert = multiplyByRotationVectors(scaledVert, rotation);
         verts[i] = Matrix::addVectors(rotatedVert, pos);
     }
 }
@@ -30,16 +31,29 @@ void Cube::move(vec3 point3D)
     updateVertex();
 }
 
+void Cube::setPivot(vec3 point3D)
+{
+    pivot = point3D;
+    updateVertex();
+}
+
 Cube::Cube(Coords *coords, Renderer3D *renderer3D)
 {
     this->coords = coords;
     this->renderer3D = renderer3D;
     pivot = vec3(0.5f, 0.5f, 0.5f);
+    size = vec3(1, 1, 1);
     updateVertex();
 }
 
 void Cube::rotate(vec3 rot)
 {
     this->rotation = Matrix::addVectors(this->rotation, rot);
+    updateVertex();
+}
+
+void Cube::setSize(vec3 size)
+{
+    this->size = size;
     updateVertex();
 }

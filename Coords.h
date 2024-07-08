@@ -20,5 +20,7 @@ public:
     Coords() = default;
     vec2 translateFromPixelsToAbsolute(SDL_FPoint coordinates);
     SDL_FPoint translateFromAbsoluteToPixels(vec2 coordinates);
+    static SDL_Point convertFPointToPoint(SDL_FPoint point);
+    static SDL_Point convertPointToFPOint(SDL_Point point);
     float getAspectRatio();
 };

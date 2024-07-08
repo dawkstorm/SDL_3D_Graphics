@@ -25,8 +25,14 @@ int main()
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     Coords coords(window);
     Renderer3D renderer3D(1.5f, &coords);
+
     Cube cube(&coords, &renderer3D);
-    cube.setPos(vec3(-1.5f, 0, 0.f));
+    cube.setPos(vec3(0., 0, 0.5f));
+
+    Cube road(&coords, &renderer3D);
+    road.setPos(vec3(0.f, -1.f, 0.f));
+    road.setPivot(vec3(0.5f, 0.5f, 0));
+    road.setSize(vec3(2, 0.5f, 300));
 
     bool resized = false;
     while (running)
@@ -64,22 +70,22 @@ int main()
                     break;
 
                 case SDLK_u:
-                    cube.rotate(vec3(-0.1f, 0, 0));
+                    cube.rotate(vec3(-0.104f, 0, 0));
                     break;
                 case SDLK_j:
-                    cube.rotate(vec3(0.1f, 0, 0));
+                    cube.rotate(vec3(0.104f, 0, 0));
                     break;
                 case SDLK_h:
-                    cube.rotate(vec3(0, 0, 0.1f));
+                    cube.rotate(vec3(0, 0, 0.104f));
                     break;
                 case SDLK_k:
-                    cube.rotate(vec3(0, 0, -0.1f));
+                    cube.rotate(vec3(0, 0, -0.104f));
                     break;
                 case SDLK_y:
-                    cube.rotate(vec3(0, 0.1f, 0));
+                    cube.rotate(vec3(0, 0.104f, 0));
                     break;
                 case SDLK_i:
-                    cube.rotate(vec3(0, -0.1f, 0));
+                    cube.rotate(vec3(0, -0.104f, 0));
                     break;
                 }
             }
@@ -96,11 +102,13 @@ int main()
             coords = Coords(window);
         }
 
-        SDL_Color color = {0, 129, 12, 255};
+        SDL_Color color = {0, 129, 45, 255};
+        SDL_Color color2 = {0, 255, 255, 255};
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
         // SDL_RenderGeometry(renderer, nullptr, cube.get2DVerticies(color).data(), cube.get2DVerticies(color).size(), nullptr, 0);
         cube.renderVertecies(renderer, color);
+        // road.renderVertecies(renderer, color2);
         SDL_RenderPresent(renderer);
     }
     SDL_DestroyRenderer(renderer);

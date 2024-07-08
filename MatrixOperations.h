@@ -12,4 +12,9 @@ public:
     static vec3 getRotatedPos(vec3 vertPos, const std::array<std::array<float, 3>, 3> &rotMatrix);
     static vec3 addVectors(vec3 p1, vec3 p2);
     static vec3 subtractVectors(vec3 p1, vec3 p2);
+    /// @brief Element-wise multiplication
+    /// @param p1 First vector
+    /// @param p2 Second vector
+    static vec3 multiplyElements(vec3 p1, vec3 p2);
+    static vec3 crossProduct(vec3 p1, vec3 p2);
 };

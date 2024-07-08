@@ -33,4 +33,5 @@ public:
     Renderer3D(float cd, Coords *coords);
     Renderer3D() = default;
     vec2 getProjectedPoint(vec3 point3D);
+    vec3 cameraPos;
 };

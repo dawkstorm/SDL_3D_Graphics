@@ -52,3 +52,18 @@ vec3 Matrix::subtractVectors(vec3 p1, vec3 p2)
     vec3 sum(p1.x - p2.x, p1.y - p2.y, p1.z - p2.z);
     return sum;
 }
+
+vec3 Matrix::multiplyElements(vec3 p1, vec3 p2)
+{
+    vec3 product(p1.x * p2.x, p1.y * p2.y, p1.z * p2.z);
+    return product;
+}
+
+vec3 Matrix::crossProduct(vec3 p1, vec3 p2)
+{
+    glm::vec3 a = {p1.x, p1.y, p1.z};
+    glm::vec3 b = {p2.x, p2.y, p2.z};
+    auto product = glm::cross(a, b);
+    vec3 result(product.x, product.y, product.z);
+    return result;
+}

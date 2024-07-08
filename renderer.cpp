@@ -15,11 +15,11 @@ Renderer3D::Renderer3D(float cd, Coords *coords)
 {
     focalLength = cd;
     this->coords = coords;
+    cameraPos = {0, 0, 0};
     setPerspectiveProjection(glm::radians(50.f), 1, 0.01f, 10.f);
 }
 
-void Renderer3D::setOrthographicProjection(
-    float left, float right, float top, float bottom, float near, float far)
+void Renderer3D::setOrthographicProjection(float left, float right, float top, float bottom, float near, float far)
 {
     projectionMatrix = glm::mat4{1.0f};
     projectionMatrix[0][0] = 2.f / (right - left);
