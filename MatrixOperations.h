@@ -17,4 +17,5 @@ public:
     /// @param p2 Second vector
     static vec3 multiplyElements(vec3 p1, vec3 p2);
     static vec3 crossProduct(vec3 p1, vec3 p2);
+    static float dotProduct(vec3 p1, vec3 p2);
 };

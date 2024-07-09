@@ -27,7 +27,7 @@ int main()
     Renderer3D renderer3D(1.5f, &coords);
 
     Cube cube(&coords, &renderer3D);
-    cube.setPos(vec3(0., 0, 0.5f));
+    cube.setPos(vec3(0, 0, 1));
 
     Cube road(&coords, &renderer3D);
     road.setPos(vec3(0.f, -1.f, 0.f));
@@ -102,7 +102,7 @@ int main()
             coords = Coords(window);
         }
 
-        SDL_Color color = {0, 129, 45, 255};
+        SDL_Color color = {0, 255, 0, 255};
         SDL_Color color2 = {0, 255, 255, 255};
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);

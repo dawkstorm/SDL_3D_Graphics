@@ -41,7 +41,7 @@ std::vector<SDL_Point> Shape::get2DVertsPoints()
 
 void Shape::renderVertecies(SDL_Renderer *renderer, const SDL_Color &color)
 {
-    SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
+    // SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
     // SDL_RenderDrawLines(renderer, get2DVertsPoints().data(), get2DVertsPoints().size());
     for (int i = 0; i < verts.size(); i += 3)
     {
@@ -54,9 +54,12 @@ bool Shape::isFrontFacing(const vec3 &tri1, const vec3 &tri2, const vec3 &tri3)
     vec3 edge1 = Matrix::subtractVectors(tri2, tri1);
     vec3 edge2 = Matrix::subtractVectors(tri3, tri2);
 
-    vec3 crossProduct = Matrix::crossProduct(edge1, edge2);
+    vec3 normal = Matrix::crossProduct(edge1, edge2);
+    vec3 cameraRay = Matrix::subtractVectors(renderer3D->cameraPos, tri1);
 
-    return crossProduct.z > 0;
+    float dotProduct = Matrix::dotProduct(normal, cameraRay);
+
+    return dotProduct < 0.48f;
 }
 
 void Shape::renderTriangle(SDL_Renderer *renderer, const vec3 &tri1, const vec3 &tri2, const vec3 &tri3, const SDL_Color &color)
@@ -70,7 +73,7 @@ void Shape::renderTriangle(SDL_Renderer *renderer, const vec3 &tri1, const vec3 
     std::array<SDL_Vertex, 3> vertsArr;
     for (int i = 0; i < 3; i++)
     {
-        Uint8 colorCooficient = 10;
+        Uint8 colorCooficient = 1;
         SDL_Color colorTest = {color.r - colorCooficient * i, color.g - colorCooficient * i, color.b - colorCooficient * i, color.a};
         vertsArr[i] = {
             triangleVerts[i], colorTest, SDL_FPoint{0}};
@@ -78,6 +81,7 @@ void Shape::renderTriangle(SDL_Renderer *renderer, const vec3 &tri1, const vec3 
     if (isFrontFacing(tri1, tri2, tri3))
     {
         SDL_RenderGeometry(renderer, nullptr, vertsArr.data(), vertsArr.size(), nullptr, 0);
-        SDL_RenderDrawLinesF(renderer, triangleVerts.data(), triangleVerts.size());
     }
+    // SDL_RenderGeometry(renderer, nullptr, vertsArr.data(), vertsArr.size(), nullptr, 0);
+    // SDL_RenderDrawLinesF(renderer, triangleVerts.data(), triangleVerts.size());
 }

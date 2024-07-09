@@ -21,7 +21,7 @@ private:
     float far;
     glm::mat4 projectionMatrix{1.f};
     void setOrthographicProjection(float left, float right, float top, float bottom, float near, float far);
-    void setPerspectiveProjection(float fovy, float aspect, float near, float far);
+    void setPerspectiveProjection(float fovy, float near, float far);
     Coords *coords;
 
 public:

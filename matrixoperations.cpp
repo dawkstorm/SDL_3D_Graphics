@@ -67,3 +67,9 @@ vec3 Matrix::crossProduct(vec3 p1, vec3 p2)
     vec3 result(product.x, product.y, product.z);
     return result;
 }
+
+float Matrix::dotProduct(vec3 p1, vec3 p2)
+{
+    float result = p1.x * p2.x + p1.y * p2.y + p1.z * p2.z;
+    return result;
+}

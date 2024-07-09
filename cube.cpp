@@ -16,7 +16,9 @@ void Cube::updateVertex()
         vec3 pivotedVert = Matrix::subtractVectors(basicVerts[i], pivot);
         vec3 scaledVert = Matrix::multiplyElements(pivotedVert, size);
         vec3 rotatedVert = multiplyByRotationVectors(scaledVert, rotation);
-        verts[i] = Matrix::addVectors(rotatedVert, pos);
+        vec3 posedInSpace = Matrix::addVectors(rotatedVert, pos);
+        vec3 posedRelativeToCamera = Matrix::subtractVectors(posedInSpace, renderer3D->cameraPos);
+        verts[i] = posedRelativeToCamera;
     }
 }
 
