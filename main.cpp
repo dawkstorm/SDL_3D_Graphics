@@ -18,23 +18,17 @@ int main()
         SDL_Quit();
         return 1;
     }
-
-    float moving = 0;
-
-    window = SDL_CreateWindow("Meow", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1600, 900, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
+    window = SDL_CreateWindow("3d graphics", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1600, 900, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     Coords coords(window);
     Renderer3D renderer3D(1.5f, &coords);
 
     Cube cube(&coords, &renderer3D);
-    cube.setPos(vec3(0, 0, 1));
-
-    Cube road(&coords, &renderer3D);
-    road.setPos(vec3(0.f, -1.f, 0.f));
-    road.setPivot(vec3(0.5f, 0.5f, 0));
-    road.setSize(vec3(2, 0.5f, 300));
+    cube.setPos(vec3(0, 0.f, -1.5f));
+    cube.rotate(vec3(-0.4f, 0, 0));
 
     bool resized = false;
+    vec3 *cam = &renderer3D.cameraPos;
     while (running)
     {
         SDL_Event ev;
@@ -47,26 +41,32 @@ int main()
             }
             if (ev.type == SDL_KEYDOWN)
             {
-
+                std::cout << cam->x << " " << cam->y << " " << cam->z << " " << std::endl;
                 switch (ev.key.keysym.sym)
                 {
                 case SDLK_DOWN:
-                    cube.setPos(vec3(cube.pos.x, cube.pos.y - 0.1f, cube.pos.z));
+                    *cam = vec3(cam->x, cam->y - 0.1f, cam->z);
+                    cube.updateVertex();
                     break;
                 case SDLK_UP:
-                    cube.setPos(vec3(cube.pos.x, cube.pos.y + 0.1f, cube.pos.z));
+                    *cam = vec3(cam->x, cam->y + 0.1f, cam->z);
+                    cube.updateVertex();
                     break;
                 case SDLK_LEFT:
-                    cube.setPos(vec3(cube.pos.x - 0.1f, cube.pos.y, cube.pos.z));
+                    *cam = vec3(cam->x - 0.1f, cam->y, cam->z);
+                    cube.updateVertex();
                     break;
                 case SDLK_RIGHT:
-                    cube.setPos(vec3(cube.pos.x + 0.1f, cube.pos.y, cube.pos.z));
+                    *cam = vec3(cam->x + 0.1f, cam->y, cam->z);
+                    cube.updateVertex();
                     break;
                 case SDLK_g:
-                    cube.setPos(vec3(cube.pos.x, cube.pos.y, cube.pos.z - 0.1f));
+                    *cam = vec3(cam->x, cam->y, cam->z - 0.1f);
+                    cube.updateVertex();
                     break;
                 case SDLK_f:
-                    cube.setPos(vec3(cube.pos.x, cube.pos.y, cube.pos.z + 0.1f));
+                    *cam = vec3(cam->x, cam->y, cam->z + 0.1f);
+                    cube.updateVertex();
                     break;
 
                 case SDLK_u:
@@ -101,7 +101,7 @@ int main()
             resized = false;
             coords = Coords(window);
         }
-
+        // cube.rotate(vec3(-.001f, 0.001f, 0.001f));
         SDL_Color color = {0, 255, 0, 255};
         SDL_Color color2 = {0, 255, 255, 255};
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);

@@ -15,7 +15,7 @@ Renderer3D::Renderer3D(float cd, Coords *coords)
 {
     focalLength = cd;
     this->coords = coords;
-    cameraPos = {0, 0, 0};
+    cameraPos = {0, 0, -3};
     // setOrthographicProjection(-1, 1, -1, 1, -1, 1);
     setPerspectiveProjection(glm::radians(50.f), 0.01f, 10.f);
 }

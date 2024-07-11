@@ -3,9 +3,8 @@
 class Cube : public Shape
 {
 private:
-    void updateVertex();
-
 public:
+    void updateVertex();
     Cube(Coords *coords, Renderer3D *renderer3D);
     Cube() = default;
     void setPos(vec3 point3D);

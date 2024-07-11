@@ -59,6 +59,12 @@ vec3 Matrix::multiplyElements(vec3 p1, vec3 p2)
     return product;
 }
 
+vec3 Matrix::scalarMultiply(vec3 p, float s)
+{
+    vec3 product(p.x * s, p.y * s, p.z * s);
+    return product;
+}
+
 vec3 Matrix::crossProduct(vec3 p1, vec3 p2)
 {
     glm::vec3 a = {p1.x, p1.y, p1.z};
@@ -68,8 +74,31 @@ vec3 Matrix::crossProduct(vec3 p1, vec3 p2)
     return result;
 }
 
+vec3 Matrix::getNormal(vec3 p1, vec3 p2)
+{
+    vec3 result;
+    result.x = p1.y * p2.z - p1.y * p2.z;
+    result.y = p1.x * p2.z - p1.x * p2.z;
+    result.z = p1.x * p2.y - p1.x * p2.y;
+    return result;
+}
+
 float Matrix::dotProduct(vec3 p1, vec3 p2)
 {
     float result = p1.x * p2.x + p1.y * p2.y + p1.z * p2.z;
     return result;
+}
+
+float Matrix::getLength(vec3 p)
+{
+    float result = std::sqrtf(p.x * p.x + p.y * p.y + p.z * p.z);
+    return result;
+}
+
+void Matrix::normalize(vec3 *p)
+{
+    float l = getLength(*p);
+    p->x /= l;
+    p->y /= l;
+    p->z /= l;
 }

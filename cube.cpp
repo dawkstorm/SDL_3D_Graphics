@@ -13,12 +13,12 @@ void Cube::updateVertex()
     verts.resize(basicVerts.size());
     for (int i = 0; i < basicVerts.size(); i++)
     {
-        vec3 pivotedVert = Matrix::subtractVectors(basicVerts[i], pivot);
-        vec3 scaledVert = Matrix::multiplyElements(pivotedVert, size);
-        vec3 rotatedVert = multiplyByRotationVectors(scaledVert, rotation);
-        vec3 posedInSpace = Matrix::addVectors(rotatedVert, pos);
-        vec3 posedRelativeToCamera = Matrix::subtractVectors(posedInSpace, renderer3D->cameraPos);
-        verts[i] = posedRelativeToCamera;
+        vec3 vert = Matrix::subtractVectors(basicVerts[i], pivot);
+        vert = Matrix::multiplyElements(vert, size);
+        vert = multiplyByRotationVectors(vert, rotation);
+        vert = Matrix::addVectors(vert, pos);
+        vert = Matrix::subtractVectors(vert, renderer3D->cameraPos);
+        verts[i] = vert;
     }
 }
 
