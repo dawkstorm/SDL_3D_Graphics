@@ -60,7 +60,7 @@ bool Shape::isFrontFacing(const vec3 &tri1, const vec3 &tri2, const vec3 &tri3)
     vec3 cameraRay = Matrix::subtractVectors(renderer3D->cameraPos, tri1);
     float dotProduct = Matrix::dotProduct(normal, cameraRay);
 
-    return dotProduct > -0.f;
+    return dotProduct > 0.f;
 }
 
 void Shape::renderTriangle(SDL_Renderer *renderer, const vec3 &tri1, const vec3 &tri2, const vec3 &tri3, const SDL_Color &color)

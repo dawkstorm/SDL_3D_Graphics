@@ -24,8 +24,9 @@ int main()
     Renderer3D renderer3D(1.5f, &coords);
 
     Cube cube(&coords, &renderer3D);
-    cube.setPos(vec3(0, 0.f, -1.5f));
-    cube.rotate(vec3(-0.4f, 0, 0));
+    cube.setPos(vec3(0, 0, 2.5f));
+    // cube.setPos(vec3(10, 0.f, 10.f));
+    // cube.rotate(vec3(-0.4f, -0.7f, 0));
 
     bool resized = false;
     vec3 *cam = &renderer3D.cameraPos;
@@ -41,7 +42,6 @@ int main()
             }
             if (ev.type == SDL_KEYDOWN)
             {
-                std::cout << cam->x << " " << cam->y << " " << cam->z << " " << std::endl;
                 switch (ev.key.keysym.sym)
                 {
                 case SDLK_DOWN:
