@@ -27,25 +27,3 @@ SDL_FPoint Coords::translateFromAbsoluteToPixels(vec2 coordinates)
     result.y = -coordinates.y * windowHeight * .5f + windowHeight * .5f;
     return result;
 }
-
-float Coords::getAspectRatio()
-{
-    float aspectRatio = (float)windowWidth / (float)windowHeight;
-    return aspectRatio;
-}
-
-SDL_Point Coords::convertFPointToPoint(SDL_FPoint point)
-{
-    SDL_Point p;
-    p.x = (int)point.x;
-    p.y = (int)point.y;
-    return p;
-}
-
-SDL_Point Coords::convertPointToFPOint(SDL_Point point)
-{
-    SDL_Point p;
-    p.x = (float)point.x;
-    p.y = (float)point.y;
-    return p;
-}

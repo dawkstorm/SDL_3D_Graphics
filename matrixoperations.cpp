@@ -27,16 +27,12 @@ std::array<std::array<float, 3>, 3> Matrix::zRotation(float angle)
 
 vec3 Matrix::getRotatedPos(vec3 vertPos, const std::array<std::array<float, 3>, 3> &rotMatrix)
 {
-    float posArr[3] = {{vertPos.x}, {vertPos.y}, {vertPos.z}};
-    float rslt[3];
-    for (int i = 0; i < 3; i++)
-    {
-        rslt[i] = 0;
-        for (int k = 0; k < 3; k++)
-        {
-            rslt[i] += rotMatrix[i][k] * posArr[k];
-        }
-    }
+    glm::vec3 pos = {vertPos.x, vertPos.y, vertPos.z};
+    glm::mat3 rot = {{rotMatrix[0][0], rotMatrix[1][0], rotMatrix[2][0]},
+                     {rotMatrix[0][1], rotMatrix[1][1], rotMatrix[2][1]},
+                     {rotMatrix[0][2], rotMatrix[1][2], rotMatrix[2][2]}};
+
+    auto rslt = rot * pos;
     vec3 newPos(rslt[0], rslt[1], rslt[2]);
     return newPos;
 }
@@ -71,15 +67,6 @@ vec3 Matrix::crossProduct(vec3 p1, vec3 p2)
     glm::vec3 b = {p2.x, p2.y, p2.z};
     auto product = glm::cross(a, b);
     vec3 result(product.x, product.y, product.z);
-    return result;
-}
-
-vec3 Matrix::getNormal(vec3 p1, vec3 p2)
-{
-    vec3 result;
-    result.x = p1.y * p2.z - p1.y * p2.z;
-    result.y = p1.x * p2.z - p1.x * p2.z;
-    result.z = p1.x * p2.y - p1.x * p2.y;
     return result;
 }
 

@@ -24,10 +24,7 @@ int main()
     Renderer3D renderer3D(1.5f, &coords);
 
     Cube cube(&coords, &renderer3D);
-    cube.setPos(vec3(0, 0, 2.5f));
-    // cube.setPos(vec3(10, 0.f, 10.f));
-    // cube.rotate(vec3(-0.4f, -0.7f, 0));
-
+    cube.setPos(vec3(0, 0, 3.5f));
     bool resized = false;
     vec3 *cam = &renderer3D.cameraPos;
     while (running)
@@ -101,13 +98,13 @@ int main()
             resized = false;
             coords = Coords(window);
         }
-        // cube.rotate(vec3(-.001f, 0.001f, 0.001f));
+        cube.rotate(vec3(-.001f, 0.001f, 0.f));
         SDL_Color color = {0, 255, 0, 255};
         SDL_Color color2 = {0, 255, 255, 255};
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
         // SDL_RenderGeometry(renderer, nullptr, cube.get2DVerticies(color).data(), cube.get2DVerticies(color).size(), nullptr, 0);
-        cube.renderVertecies(renderer, color);
+        cube.render(renderer, color);
         // road.renderVertecies(renderer, color2);
         SDL_RenderPresent(renderer);
     }

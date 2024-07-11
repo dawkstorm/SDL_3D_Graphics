@@ -2,6 +2,8 @@
 #include <SDL2/SDL.h>
 #include <vector>
 #include <iostream>
+
+/// @brief 2 dimensional vector
 struct vec2
 {
     float x;
@@ -16,11 +18,18 @@ private:
     int windowHeight;
 
 public:
+    /// @brief Constructor
+    /// @param window Window
     Coords(SDL_Window *window);
     Coords() = default;
+
+    /// @brief Translate coordinates in pixel into absolute
+    /// @param coordinates Coordinates
+    /// @return Vector2
     vec2 translateFromPixelsToAbsolute(SDL_FPoint coordinates);
+
+    /// @brief Translate absolute coordinates into pixels on secreen
+    /// @param coordinates Coordinates
+    /// @return Vector2
     SDL_FPoint translateFromAbsoluteToPixels(vec2 coordinates);
-    static SDL_Point convertFPointToPoint(SDL_FPoint point);
-    static SDL_Point convertPointToFPOint(SDL_Point point);
-    float getAspectRatio();
 };

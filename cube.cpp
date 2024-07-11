@@ -1,61 +1,59 @@
 #include "Cube.h"
 
-vec3 multiplyByRotationVectors(vec3 vert, vec3 &rot)
-{
-    auto result = Matrix::getRotatedPos(vert, Matrix::xRotation(rot.x));
-    result = Matrix::getRotatedPos(result, Matrix::yRotation(rot.y));
-    result = Matrix::getRotatedPos(result, Matrix::zRotation(rot.z));
-    return result;
-}
-
-void Cube::updateVertex()
-{
-    verts.resize(basicVerts.size());
-    for (int i = 0; i < basicVerts.size(); i++)
-    {
-        vec3 vert = Matrix::subtractVectors(basicVerts[i], pivot);
-        vert = Matrix::multiplyElements(vert, size);
-        vert = multiplyByRotationVectors(vert, rotation);
-        vert = Matrix::addVectors(vert, pos);
-        vert = Matrix::subtractVectors(vert, renderer3D->cameraPos);
-        verts[i] = vert;
-    }
-}
-
-void Cube::setPos(vec3 point3D)
-{
-    pos = point3D;
-    updateVertex();
-}
-void Cube::move(vec3 point3D)
-{
-    Matrix::addVectors(pos, point3D);
-    updateVertex();
-}
-
-void Cube::setPivot(vec3 point3D)
-{
-    pivot = point3D;
-    updateVertex();
-}
-
 Cube::Cube(Coords *coords, Renderer3D *renderer3D)
 {
+    basicVerts = {
+        vec3(0, 1, 0), // Top front vertex
+        vec3(0, 0, 0), // Bottom front vertex
+        vec3(1, 0, 0), // Right front vertex
+        vec3(1, 0, 0), // Top front vertex (repeated for the second triangle)
+        vec3(1, 1, 0), // Top right vertex
+        vec3(0, 1, 0), // Right front vertex (repeated for the second triangle)
+        // Front side
+
+        vec3(1, 1, 0),
+        vec3(1, 0, 0),
+        vec3(1, 0, 1),
+        vec3(1, 0, 1),
+        vec3(1, 1, 1),
+        vec3(1, 1, 0),
+        // Right side
+
+        vec3(0, 1, 1), // Top front vertex
+        vec3(1, 1, 1), // Bottom front vertex
+        vec3(1, 0, 1), // Right front vertex
+        vec3(1, 0, 1), // Top front vertex (repeated for the second triangle)
+        vec3(0, 0, 1), // Top right vertex
+        vec3(0, 1, 1), // Right front vertex (repeated for the second triangle)
+        // Back side
+
+        vec3(0, 1, 0),
+        vec3(0, 1, 1),
+        vec3(0, 0, 1),
+        vec3(0, 0, 1),
+        vec3(0, 0, 0),
+        vec3(0, 1, 0),
+        // Right side
+
+        vec3(0, 1, 1),
+        vec3(0, 1, 0),
+        vec3(1, 1, 0),
+        vec3(1, 1, 0),
+        vec3(1, 1, 1),
+        vec3(0, 1, 1),
+        // Top side
+
+        vec3(0, 0, 1),
+        vec3(1, 0, 1),
+        vec3(1, 0, 0),
+        vec3(1, 0, 0),
+        vec3(0, 0, 0),
+        vec3(0, 0, 1),
+        // Back side
+    };
+
     this->coords = coords;
     this->renderer3D = renderer3D;
     pivot = vec3(0.5f, 0.5f, 0.5f);
-    size = vec3(1, 1, 1);
-    updateVertex();
-}
-
-void Cube::rotate(vec3 rot)
-{
-    this->rotation = Matrix::addVectors(this->rotation, rot);
-    updateVertex();
-}
-
-void Cube::setSize(vec3 size)
-{
-    this->size = size;
     updateVertex();
 }

@@ -7,42 +7,30 @@ Shape::Shape(Coords *coords, Renderer3D *renderer3D)
     this->renderer3D = renderer3D;
 }
 
-std::vector<SDL_Vertex> Shape::get2DVerticies(SDL_Color &color)
+vec3 multiplyByRotationVectors(vec3 vert, vec3 &rot)
 {
-    std::vector<SDL_Vertex> verticies;
-    verticies.reserve(verts.size());
-    Uint8 colour = 255;
-    for (int i = 0; i < verts.size(); i++)
-    {
-        verticies.push_back(
-            {
-                coords->translateFromAbsoluteToPixels(renderer3D->getProjectedPoint(verts[i])),
-                SDL_Color{colour, colour, colour, 255},
-                SDL_FPoint{0},
-            });
-        colour -= 5.f;
-    }
-    return verticies;
+    auto result = Matrix::getRotatedPos(vert, Matrix::xRotation(rot.x));
+    result = Matrix::getRotatedPos(result, Matrix::yRotation(rot.y));
+    result = Matrix::getRotatedPos(result, Matrix::zRotation(rot.z));
+    return result;
 }
 
-std::vector<SDL_Point> Shape::get2DVertsPoints()
+void Shape::updateVertex()
 {
-    std::vector<SDL_Point> verticies;
-    verticies.reserve(verts.size());
-    for (int i = 0; i < verts.size(); i++)
+    verts.resize(basicVerts.size());
+    for (int i = 0; i < basicVerts.size(); i++)
     {
-        int pX = (int)coords->translateFromAbsoluteToPixels(renderer3D->getProjectedPoint(verts[i])).x;
-        int pY = (int)coords->translateFromAbsoluteToPixels(renderer3D->getProjectedPoint(verts[i])).y;
-        SDL_Point point = {pX, pY};
-        verticies.push_back(point);
+        vec3 vert = Matrix::subtractVectors(basicVerts[i], pivot);
+        vert = Matrix::multiplyElements(vert, size);
+        vert = multiplyByRotationVectors(vert, rotation);
+        vert = Matrix::addVectors(vert, pos);
+        vert = Matrix::subtractVectors(vert, renderer3D->cameraPos);
+        verts[i] = vert;
     }
-    return verticies;
 }
 
-void Shape::renderVertecies(SDL_Renderer *renderer, const SDL_Color &color)
+void Shape::render(SDL_Renderer *renderer, const SDL_Color &color)
 {
-    // SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
-    // SDL_RenderDrawLines(renderer, get2DVertsPoints().data(), get2DVertsPoints().size());
     for (int i = 0; i < verts.size(); i += 3)
     {
         renderTriangle(renderer, verts[i], verts[i + 1], verts[i + 2], color);
@@ -83,6 +71,34 @@ void Shape::renderTriangle(SDL_Renderer *renderer, const vec3 &tri1, const vec3 
     {
         SDL_RenderGeometry(renderer, nullptr, vertsArr.data(), vertsArr.size(), nullptr, 0);
     }
-    // SDL_RenderGeometry(renderer, nullptr, vertsArr.data(), vertsArr.size(), nullptr, 0);
-    //  SDL_RenderDrawLinesF(renderer, triangleVerts.data(), triangleVerts.size());
+}
+
+void Shape::setPos(vec3 point3D)
+{
+    pos = point3D;
+    updateVertex();
+}
+
+void Shape::move(vec3 direction)
+{
+    Matrix::addVectors(pos, direction);
+    updateVertex();
+}
+
+void Shape::setPivot(vec3 point3D)
+{
+    pivot = point3D;
+    updateVertex();
+}
+
+void Shape::rotate(vec3 rot)
+{
+    this->rotation = Matrix::addVectors(this->rotation, rot);
+    updateVertex();
+}
+
+void Shape::setSize(vec3 size)
+{
+    this->size = size;
+    updateVertex();
 }
