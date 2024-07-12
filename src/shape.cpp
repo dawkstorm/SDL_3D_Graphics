@@ -76,9 +76,9 @@ void Shape::renderTriangle(SDL_Renderer *renderer, const vec3 &tri1, const vec3 
     if (isFrontFacing(tri1, tri2, tri3))
     {
         SDL_RenderGeometry(renderer, nullptr, vertsArr.data(), vertsArr.size(), nullptr, 0); // To draw filled cube
-        // SDL_RenderDrawLinesF(renderer, triangleVerts.data(), triangleVerts.size());  // To draw only seen cube's frames
+        // SDL_RenderDrawLinesF(renderer, triangleVerts.data(), triangleVerts.size());  // To draw only seen cube's edges
     }
-    // SDL_RenderDrawLinesF(renderer, triangleVerts.data(), triangleVerts.size()); // To draw all cube's frames
+    // SDL_RenderDrawLinesF(renderer, triangleVerts.data(), triangleVerts.size()); // To draw all cube's edges
 }
 
 void Shape::setPos(vec3 point3D)
