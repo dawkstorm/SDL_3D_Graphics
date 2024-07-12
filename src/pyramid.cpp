@@ -1,4 +1,4 @@
-#include "Pyramid.h"
+#include "headers/Pyramid.h"
 
 Pyramid::Pyramid(Coords *coords, Renderer3D *renderer3D)
 {

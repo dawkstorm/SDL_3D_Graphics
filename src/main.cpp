@@ -1,11 +1,11 @@
 #include <iostream>
 #include <SDL2/SDL.h>
-#include "main.h"
+#include "headers/main.h"
 #include <vector>
-#include "Coords.h"
-#include "Renderer.h"
-#include "Cube.h"
-#include "Pyramid.h"
+#include "headers/Coords.h"
+#include "headers/Renderer.h"
+#include "headers/Cube.h"
+#include "headers/Pyramid.h"
 static bool running = true;
 
 int main()

@@ -1,4 +1,4 @@
-#include "Coords.h"
+#include "headers/Coords.h"
 
 vec2::vec2(float x, float y)
 {

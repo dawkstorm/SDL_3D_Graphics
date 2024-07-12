@@ -1,4 +1,4 @@
-#include "Shape.h"
+#include "headers/Shape.h"
 #include <iostream>
 
 Shape::Shape(Coords *coords, Renderer3D *renderer3D)

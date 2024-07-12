@@ -1,5 +1,5 @@
-#include "Shape.h"
-#include "Renderer.h"
+#include "headers/Shape.h"
+#include "headers/Renderer.h"
 #include <SDL2/SDL.h>
 #include <cassert>
 #include <limits>
@@ -46,8 +46,7 @@ void Renderer3D::setPerspectiveProjection(float fovy, float aspect, float near, 
 vec2 Renderer3D::getProjectedPoint(vec3 point3D)
 {
     vec2 projected;
-    float w = 2.f;
-    glm::vec4 point = {point3D.x / w, point3D.y / w, point3D.z / w, w};
+    glm::vec4 point = {point3D.x, point3D.y, point3D.z, 1};
 
     auto proj = getProjectionMatrix() * point;
     projected.x = proj[0] / proj[3];

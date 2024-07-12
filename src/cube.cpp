@@ -1,4 +1,4 @@
-#include "Cube.h"
+#include "headers/Cube.h"
 
 Cube::Cube(Coords *coords, Renderer3D *renderer3D)
 {
@@ -9,8 +9,7 @@ Cube::Cube(Coords *coords, Renderer3D *renderer3D)
         vec3(1, 0, 0), // Top front vertex (repeated for the second triangle)
         vec3(1, 1, 0), // Top right vertex
         vec3(0, 1, 0), // Right front vertex (repeated for the second triangle)
-        // Front side
-
+                       // Front side
         vec3(1, 1, 0),
         vec3(1, 0, 0),
         vec3(1, 0, 1),
