@@ -49,7 +49,7 @@ Cube::Cube(Coords *coords, Renderer3D *renderer3D)
         vec3(1, 0, 0),
         vec3(0, 0, 0),
         vec3(0, 0, 1),
-        // Back side
+        // Bottom side
     };
 
     this->coords = coords;

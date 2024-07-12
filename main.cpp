@@ -5,6 +5,7 @@
 #include "Coords.h"
 #include "Renderer.h"
 #include "Cube.h"
+#include "Pyramid.h"
 static bool running = true;
 
 int main()
@@ -24,9 +25,14 @@ int main()
     Renderer3D renderer3D(1.5f, &coords);
 
     Cube cube(&coords, &renderer3D);
-    cube.setPos(vec3(0, 0, 3.5f));
+    cube.setPos(vec3(1.5f, 0, 17.5f));
+
+    Pyramid pyramid(&coords, &renderer3D);
+    pyramid.setPos(vec3(-1, 0, 7));
+
     bool resized = false;
     vec3 *cam = &renderer3D.cameraPos;
+    float angle = 45.f;
     while (running)
     {
         SDL_Event ev;
@@ -65,26 +71,9 @@ int main()
                     *cam = vec3(cam->x, cam->y, cam->z + 0.1f);
                     cube.updateVertex();
                     break;
-
-                case SDLK_u:
-                    cube.rotate(vec3(-0.104f, 0, 0));
-                    break;
-                case SDLK_j:
-                    cube.rotate(vec3(0.104f, 0, 0));
-                    break;
-                case SDLK_h:
-                    cube.rotate(vec3(0, 0, 0.104f));
-                    break;
-                case SDLK_k:
-                    cube.rotate(vec3(0, 0, -0.104f));
-                    break;
-                case SDLK_y:
-                    cube.rotate(vec3(0, 0.104f, 0));
-                    break;
-                case SDLK_i:
-                    cube.rotate(vec3(0, -0.104f, 0));
-                    break;
                 }
+                cube.rotateByKeys(&ev);
+                pyramid.rotateByKeys(&ev);
             }
             if (ev.type == SDL_WINDOWEVENT && ev.window.event == SDL_WINDOWEVENT_SIZE_CHANGED)
             {
@@ -98,14 +87,14 @@ int main()
             resized = false;
             coords = Coords(window);
         }
-        cube.rotate(vec3(-.001f, 0.001f, 0.f));
+        // cube.rotate(vec3(-.001f, 0.001f, 0.f));
         SDL_Color color = {0, 255, 0, 255};
-        SDL_Color color2 = {0, 255, 255, 255};
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
-        // SDL_RenderGeometry(renderer, nullptr, cube.get2DVerticies(color).data(), cube.get2DVerticies(color).size(), nullptr, 0);
+
         cube.render(renderer, color);
-        // road.renderVertecies(renderer, color2);
+        pyramid.render(renderer, color);
+
         SDL_RenderPresent(renderer);
     }
     SDL_DestroyRenderer(renderer);

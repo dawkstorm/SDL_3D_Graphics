@@ -26,7 +26,8 @@ private:
     void setOrthographicProjection(float left, float right, float top, float bottom, float near, float far);
 
     /// @brief Set perspective projection matrix
-    void setPerspectiveProjection(float fovy, float near, float far);
+    void setPerspectiveProjection(float fovy, float aspect, float near, float far);
+
     Coords *coords;
 
 public:
@@ -35,7 +36,6 @@ public:
     {
         return projectionMatrix;
     }
-
     float focalLength;
 
     /// @brief Constructor

@@ -32,4 +32,8 @@ public:
     /// @param coordinates Coordinates
     /// @return Vector2
     SDL_FPoint translateFromAbsoluteToPixels(vec2 coordinates);
+
+    /// @brief Get aspect ratio of the screen height divided by width
+    /// @return float
+    float getAspectRatioHW();
 };

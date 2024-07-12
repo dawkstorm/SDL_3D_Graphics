@@ -27,3 +27,8 @@ SDL_FPoint Coords::translateFromAbsoluteToPixels(vec2 coordinates)
     result.y = -coordinates.y * windowHeight * .5f + windowHeight * .5f;
     return result;
 }
+
+float Coords::getAspectRatioHW()
+{
+    return (float)windowHeight / (float)windowWidth;
+}

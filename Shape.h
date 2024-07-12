@@ -77,4 +77,7 @@ public:
     /// @brief Rotate the object
     /// @param rotation Angles to rotate by
     void rotate(vec3 rotation);
+
+    /// @brief Make object rotatable by keys
+    void rotateByKeys(SDL_Event *ev);
 };

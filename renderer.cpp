@@ -17,7 +17,7 @@ Renderer3D::Renderer3D(float cd, Coords *coords)
     this->coords = coords;
     cameraPos = {0, 0, 0};
     // setOrthographicProjection(-1, 1, -1, 1, -1, 1);
-    setPerspectiveProjection(glm::radians(50.f), 0.01f, 10.f);
+    setPerspectiveProjection(glm::radians(45.f), coords->getAspectRatioHW(), 0.01f, 1000.f);
 }
 
 void Renderer3D::setOrthographicProjection(float left, float right, float top, float bottom, float near, float far)
@@ -31,10 +31,10 @@ void Renderer3D::setOrthographicProjection(float left, float right, float top, f
     projectionMatrix[3][2] = -near / (far - near);
 }
 
-void Renderer3D::setPerspectiveProjection(float fovy, float near, float far)
+void Renderer3D::setPerspectiveProjection(float fovy, float aspect, float near, float far)
 {
-    assert(glm::abs(1 - std::numeric_limits<float>::epsilon()) > 0.0f);
-    const float tanHalfFovy = tan(fovy / 2.f);
+    assert(glm::abs(aspect - std::numeric_limits<float>::epsilon()) > 0.0f);
+    const float tanHalfFovy = tan(fovy * aspect / 2.f);
     projectionMatrix = glm::mat4{0.0f};
     projectionMatrix[0][0] = 1.f / (1 * tanHalfFovy);
     projectionMatrix[1][1] = 1.f / (tanHalfFovy);
