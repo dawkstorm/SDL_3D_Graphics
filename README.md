@@ -2,7 +2,7 @@
 ## 3D Graphics in C++ without OpenGL and other 3D APIs
 
 - **Building and running**
-	- ``` git clone https://github.com/dawkstorm/SDL_3D_Graphics.git```
+	- ```git clone https://github.com/dawkstorm/SDL_3D_Graphics.git```
 	-  ``` make ```
 	- Run in ```/build```, ```graphics3D```
 - **Key features**
