@@ -4,7 +4,7 @@
 - **Building and running**
 	- Run ```git clone https://github.com/dawkstorm/SDL_3D_Graphics.git```
 	- Create a build folder in the project
-  	- Run cmake {path to the CMakeLists.txt}
+  	- Run ```cmake {path to the CMakeLists.txt}```
 	- Run ``` make ```
 	- Run in ```graphics3D``` in ```/build```
 - **Key features**
